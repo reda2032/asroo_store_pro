@@ -3,6 +3,7 @@ import 'package:asroo_store/core/common/screens/no_network_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'core/routes/app_routes.dart';
 import 'features/splash/presentation/views/splash_screen.dart';
 
 class AsrooStoreApp extends StatelessWidget {
@@ -35,6 +36,8 @@ class AsrooStoreApp extends StatelessWidget {
                   ),
                 );
               },
+              onGenerateRoute: AppRoutes.onGenerateRoute,
+              initialRoute: AppRoutes.splash,
               home: Scaffold(
                 appBar: AppBar(
                   centerTitle: true,
