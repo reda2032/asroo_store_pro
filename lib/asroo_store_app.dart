@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/routes/app_routes.dart';
+import 'core/style/theme/app_theme.dart';
 import 'features/splash/presentation/views/splash_screen.dart';
 
 class AsrooStoreApp extends StatelessWidget {
@@ -22,10 +23,7 @@ class AsrooStoreApp extends StatelessWidget {
               title: 'Asroo Store',
               debugShowCheckedModeBanner: false,
               //  debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
-              theme: ThemeData(
-                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-                useMaterial3: true,
-              ),
+              theme: themeDark(),
               builder: (context, widget) {
                 return Scaffold(
                   body: Builder(
@@ -36,6 +34,7 @@ class AsrooStoreApp extends StatelessWidget {
                   ),
                 );
               },
+
               onGenerateRoute: AppRoutes.onGenerateRoute,
               initialRoute: AppRoutes.splash,
               home: Scaffold(
