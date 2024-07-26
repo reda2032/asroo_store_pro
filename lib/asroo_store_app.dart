@@ -3,6 +3,7 @@ import 'package:asroo_store/core/common/screens/no_network_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'core/language/app_localizations_setup.dart';
 import 'core/routes/app_routes.dart';
 import 'core/style/theme/app_theme.dart';
 import 'features/splash/presentation/views/splash_screen.dart';
@@ -24,6 +25,12 @@ class AsrooStoreApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               //  debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
               theme: themeDark(),
+              locale: const Locale('ar'),
+              supportedLocales: AppLocalizationsSetup.supportedLocales,
+              localizationsDelegates:
+                  AppLocalizationsSetup.localizationsDelegates,
+              localeResolutionCallback:
+                  AppLocalizationsSetup.localeResolutionCallback,
               builder: (context, widget) {
                 return Scaffold(
                   body: Builder(
