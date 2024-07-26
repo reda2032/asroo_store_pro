@@ -1,24 +1,50 @@
+import 'package:asroo_store/core/app/connectivity_controller.dart';
+import 'package:asroo_store/core/common/screens/no_network_screen.dart';
 import 'package:flutter/material.dart';
 
 class AsrooStoreApp extends StatelessWidget {
   const AsrooStoreApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Asroo Store',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text('Asroo Store'),
-        ),
-      ),
+    return ValueListenableBuilder(
+      valueListenable: ConnectivityController.instance.isConnected,
+      builder: (_, value, __) {
+        if (value) {
+          return MaterialApp(
+            title: 'Asroo Store',
+            debugShowCheckedModeBanner: false,
+            //  debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
+            theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              useMaterial3: true,
+            ),
+            builder: (context, widget) {
+              return Scaffold(
+                body: Builder(
+                  builder: (context) {
+                    ConnectivityController.instance.init();
+                    return widget!;
+                  },
+                ),
+              );
+            },
+            home: Scaffold(
+              appBar: AppBar(
+                centerTitle: true,
+                title: const Text('Asroo Store'),
+              ),
+            ),
+          );
+        } else {
+          return const MaterialApp(
+            title: 'No NetWork ',
+            debugShowCheckedModeBanner: false,
+            //  debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
+            home: NoNetWorkScreen(),
+          );
+        }
+      },
     );
   }
 }
