@@ -3,6 +3,7 @@ class AppImages {
   static const noNetwork = 'assets/images/core/no_network.jpg';
   static const pageUnderBuild = 'assets/images/core/page_under_build.jpg';
   static const emptyScreen = 'assets/images/core/empty_screen.png';
+  static const splashScreen = 'assets/images/core/splash_ios_android_11.png';
 
   // Customer
   static const userAvatar = 'assets/images/customer/user.png';

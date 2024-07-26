@@ -3,6 +3,8 @@ import 'package:asroo_store/core/common/screens/no_network_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'features/splash/presentation/views/splash_screen.dart';
+
 class AsrooStoreApp extends StatelessWidget {
   const AsrooStoreApp({super.key});
 
@@ -38,6 +40,7 @@ class AsrooStoreApp extends StatelessWidget {
                   centerTitle: true,
                   title: const Text('Asroo Store'),
                 ),
+                body: const SplashScreen(),
               ),
             ),
           );
