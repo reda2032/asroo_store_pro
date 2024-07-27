@@ -5,6 +5,9 @@ import '../style/theme/assets_extension.dart';
 import '../style/theme/color_extension.dart';
 
 extension ContextExt on BuildContext {
+  // style
+  TextStyle get textStyle => Theme.of(this).textTheme.displaySmall!;
+
   //color
   MyColors get color => Theme.of(this).extension<MyColors>()!;
 
