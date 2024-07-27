@@ -34,8 +34,8 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
   }
 
   void excuteNaviagtion() {
-    Future.delayed(const Duration(seconds: 6), () {
-      context.pushName(AppRoutes.testOne);
+    Future.delayed(const Duration(seconds: 2), () {
+      context.pushName(AppRoutes.login);
       //   Navigator.pushReplacementNamed(context, SigninView.routeName);
     });
   }

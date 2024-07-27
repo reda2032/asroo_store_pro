@@ -25,7 +25,7 @@ class AsrooStoreApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               //  debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
               theme: themeDark(),
-              locale: const Locale('ar'),
+              locale: const Locale('en'),
               supportedLocales: AppLocalizationsSetup.supportedLocales,
               localizationsDelegates:
                   AppLocalizationsSetup.localizationsDelegates,
