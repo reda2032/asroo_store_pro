@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'asroo_store_app.dart';
 import 'core/app/bloc_observer.dart';
 import 'core/app/env.variables.dart';
+import 'core/di/injection_container.dart';
 import 'core/service/shared_pref/shared_pref.dart';
 import 'firebase_options.dart';
 
@@ -19,6 +20,8 @@ void main() async {
   );
   // SharedPreference
   await SharedPref().instantiatePreferences();
+  // injector
+  await setupInjector();
   // BlocObserver
   Bloc.observer = AppBlocObserver();
   // orientation
