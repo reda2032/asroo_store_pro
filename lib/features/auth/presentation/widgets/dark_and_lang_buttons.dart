@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/app/app_cubit/app_cubit.dart';
+import '../../../../core/language/app_localizations.dart';
 
 class DarkAndLangButtons extends StatelessWidget {
   const DarkAndLangButtons({super.key});
@@ -41,7 +42,13 @@ class DarkAndLangButtons extends StatelessWidget {
         CustomFadeInLeft(
           duration: 400,
           child: CustomLinearButton(
-            onPressed: () {},
+            onPressed: () {
+              if (AppLocalizations.of(context)!.isEnLocale) {
+                cubit.toArabic();
+              } else {
+                cubit.toEnglish();
+              }
+            },
             height: 44.h,
             width: 100.w,
             child: TextApp(

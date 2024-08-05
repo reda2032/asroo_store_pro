@@ -26,7 +26,8 @@ class AsrooStoreApp extends StatelessWidget {
             create: (context) => sl<AppCubit>()
               ..changeAppThemeMode(
                 sharedMode: SharedPref().getBoolean(PrefKeys.themeMode),
-              ),
+              )
+              ..getSavedLanguage(),
             child: ScreenUtilInit(
               designSize: const Size(375, 812),
               minTextAdapt: true,
@@ -41,7 +42,7 @@ class AsrooStoreApp extends StatelessWidget {
                     debugShowCheckedModeBanner: false,
                     //  debugShowCheckedModeBanner: EnvVariable.instance.debugMode,
                     theme: cubit.isDark ? themeLight() : themeDark(),
-                    locale: const Locale('en'),
+                    locale: Locale(cubit.currentLangCode),
                     supportedLocales: AppLocalizationsSetup.supportedLocales,
                     localizationsDelegates:
                         AppLocalizationsSetup.localizationsDelegates,
