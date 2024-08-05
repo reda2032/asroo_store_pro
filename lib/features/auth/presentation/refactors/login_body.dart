@@ -20,6 +20,8 @@ class LoginBody extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       child: SingleChildScrollView(
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+        reverse: true,
         child: Column(
           children: [
             //Dark mode and language
